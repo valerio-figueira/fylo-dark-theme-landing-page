@@ -1,38 +1,253 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@100;300;400;500;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+:root{
+    --darkblue1: hsl(217, 28%, 15%);
+    --darkblue2: hsl(218, 28%, 13%);
+    --darkblue3: hsl(216, 53%, 9%);
+    --darkblue4: hsl(219, 30%, 18%);
+    
+    --cyan: hsl(176, 68%, 64%);
+    --blue: hsl(198, 60%, 50%);
+    --lightred: hsl(0, 100%, 63%);
+    --white: hsl(0, 0%, 100%);
+    --paragraphs: #bbbbbb;
+
+    --font-size: 14px;
+
+    --desktop: 1440px;
+    --mobile: 375px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0; padding: 0;
+    transition: .3s;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body{
+    max-width: var(--desktop);
+    min-width: var(--mobile);
+    background: var(--darkblue4);
+
+    padding: 0 10%;
+    margin: auto;
+}
+
+
+/* ANCHOR AS BUTTON STYLES*/
+a.button{
+    display: inline-block;
+    padding: 1rem 5rem;
+    margin: 1rem 0;
+
+    color: var(--white);
+    background: linear-gradient(to right, hsl(176, 68%, 64%), hsl(198, 60%, 50%) 70%);
+    
+    border-radius: 25px;
+}
+a.button:hover{
+    background: linear-gradient(to right, hsl(176, 68%, 64%), hsl(198, 60%, 50%) 100%);
+}
+
+
+/* HEADER STYLES */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 0;
+}
+header a{
+    font-size: 14px;
+    color: #bbbbbb;
+}
+header a:hover{
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+/* NAV STYLES */
+.navbar {
+    display: flex;
+    gap: 2.5rem;
+}
+
+
+
+/* INTRODUCTION SECTION */
+.introduction{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    max-width: 580px;
+    text-align: center;
+}
+.introduction .title{
+    color: var(--white);
+    margin: 1rem 0 0rem;
+}
+.introduction .description{
+    color: var(--paragraphs);
+    margin: 1rem 0;
+}
+.introduction img{
+    width: 400px;
+}
+
+
+body{
+    background-image: url(./assets/bg-curvy-desktop.svg);
+    background-size: 700% 85%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
+}
+
+/* SERVICES SECTION */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+    margin: 1rem auto;
+    padding: 0 5rem;
+}
+.services .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    min-width: 350px;
+    max-width: 450px;
+    margin: 1rem auto;
+    padding: 0 3rem;
+}
+.services .box img{
+    height: 80px;
+    margin: 1rem 0;
+}
+.services .box .title{
+    color: var(--white);
+}
+.services .box .description{
+    color: var(--paragraphs);
+}
+
+
+
+
+/* MORE INFO SECTION */
+.more-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.more-info img{
+    position: relative;
+    left: -5rem;
+    width: 500px;
+    margin-right: 1rem;
+}
+.more-info .box{
+    max-width: 500px;
+}
+.more-info .box .title{
+    color: var(--white);
+}
+.more-info .box .description{
+    color: var(--paragraphs);
+    margin: 2rem 0;
+}
+.more-info .box .link{
+    color: var(--cyan);
+    text-decoration: underline;
+
+}
+
+
+
+/* CARDS SECTION */
+.cards{
+    position: relative;
+    display: flex;
+
+    color: var(--white);
+    margin: 5rem -6rem;
+}
+.cards .card{
+    padding: 2rem 1.5rem;
+    margin-right: 1.5rem;
+    background-color: var(--darkblue4);
+    border-radius: .5rem;
+
+    box-shadow: 5px 5px 5px 2px var(--darkblue1);
+}
+/* REMOVE MARGIN IN LAST CARD */
+.cards .card:nth-of-type(3){
+    margin: 0;
+}
+.cards .card .box{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    margin: 2rem 0 0;
+}
+.cards .card .box img{
+    width: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    margin-right: 1rem;
+}
+.cards .card .person-info .name{
+    font-weight: 700;
+}
+.cards .card .person-info .job{
+    color: var(--paragraphs);
+}
+.quotes{
+    position: absolute;
+    top: -1.5rem;
+    left: -1.5rem;
+}
+
+@media screen and (max-width: 1300px) {
+  .cards{
+    margin: 5rem 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 1100px) {
+  .cards{
+    margin: 5rem -3rem;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 800px) {
+  .quotes{
+    left: 0;
+    top: -.5rem;
+  }
+  .cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+  }
+  .cards .card{
+    margin: 1rem;
+  }
+  .cards .card:nth-of-type(3){
+    margin: 1rem;
   }
 }
